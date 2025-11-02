@@ -5,11 +5,42 @@ from datetime import datetime, timedelta
 # TODO: Create a function to view all books that are currently available
 # Output should include book ID, title, and author
 
+# '''
+# (Citation: GitHub's copilot) I asked for help on
+# how to call the books that were available or  if the availability is True 
+
+def viewBooks():
+    avail_Books = []
+    for books in library_books:
+        if books["available"] == True:
+            avail_Books.append(
+                {
+                    "id": books["id"],
+                    "title": books["title"],
+                    "author": books["author"]
+                })
+    return avail_Books
+
+# print(viewBooks())
+
 
 # -------- Level 2 --------
 # TODO: Create a function to search books by author OR genre
 # Search should be case-insensitive
 # Return a list of matching books
+
+# I've searched up 
+def searchAny():
+    result_match = []
+    search_bar = input("Search up the word author or genre:\n").lower()
+    for items in library_books:
+        if (search_bar in items["author"].lower()) or (search_bar in items["genre"].lower()):
+            #print('My Minion') - remove this line before showing
+            search_bar.append(items)
+    return search_bar
+
+
+print(searchAny()) # Remove this line before showing
 
 
 # -------- Level 3 --------
