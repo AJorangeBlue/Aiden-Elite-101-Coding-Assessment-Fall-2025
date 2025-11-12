@@ -29,18 +29,30 @@ def viewBooks():
 # Search should be case-insensitive
 # Return a list of matching books
 
-# I've searched up 
-def searchAny():
-    result_match = []
-    search_bar = input("Search up the word author or genre:\n").lower()
-    for items in library_books:
-        if (search_bar in items["author"].lower()) or (search_bar in items["genre"].lower()):
-            #print('My Minion') - remove this line before showing
-            search_bar.append(items)
-    return search_bar
+"""
+Citation: W3school's python string .strip() to remove unnecessary spaces.
+Mimo.org for the 'in' operator
+GitHub's Copliot for why my function didn't return anything
+"""
+
+def search_Anything(search_bar):
+    search_results = []
+    #search_bar = input("Search up an author or a genre: ").strip().lower()
+    for item in library_books:
+        if (search_bar in item["author"].lower() or search_bar in item['genre'].lower()):
+            search_results.append(item)
+            #print() - delete this line later
+            
+
+    return search_results
+    
+search_bar = input("Search up an author or a genre: ").strip().lower()
+print(search_Anything(search_bar))
 
 
-print(searchAny()) # Remove this line before showing
+
+
+#print(searchAny()) # Remove this line before showing
 
 
 # -------- Level 3 --------
