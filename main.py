@@ -21,7 +21,10 @@ def viewBooks():
                 })
     return avail_Books
 
-# print(viewBooks())
+print("Level 1 - Viewing the books that are available!")
+print(viewBooks())
+print("\n")
+
 
 
 # -------- Level 2 --------
@@ -46,13 +49,14 @@ def search_Anything(search_bar):
 
     return search_results
     
+print('Level 2 - The search engine!')
 search_bar = input("Search up an author or a genre: ").strip().lower()
 print(search_Anything(search_bar))
 
 
 
 
-#print(searchAny()) # Remove this line before showing
+
 
 
 # -------- Level 3 --------
